@@ -1,0 +1,16 @@
+{
+  "skip_files": [
+      "lib/ex_bookify/application.ex",
+      "lib/ex_bookify_web.ex",
+      "lib/ex_bookify_web/telemetry.ex",
+      "lib/ex_bookify_web/router.ex",
+      "lib/ex_bookify_web/views/error_helpers.ex",
+      "test/support/data_case.ex",
+      "test/support/conn_case.ex",
+      "test/test_helper.exs"
+  ],
+  "coverage_options": {
+      "treat_no_relevant_lines_as_covered": true,
+      "minimum_coverage": 1
+  }
+}

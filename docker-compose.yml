@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  extwix-db:
+    image: postgres:latest
+    container_name: ExTwix.Db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5432:5432
