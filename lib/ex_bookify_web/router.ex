@@ -12,6 +12,15 @@ defmodule ExBookifyWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug ExBookifyWeb.Plugs.SetCurrentUser
+  end
+
+  scope "/" do
+    pipe_through :api
+
+    forward "/api", Absinthe.Plug, schema: ExBookifyWeb.Schema.Schema
+
+    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: ExBookifyWeb.Schema.Schema
   end
 
   scope "/", ExBookifyWeb do
