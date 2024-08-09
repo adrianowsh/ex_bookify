@@ -45,7 +45,7 @@ defmodule ExBookify.Accounts do
 
   # Dataloader
 
-  def datasource() do
+  def datasource do
     Dataloader.Ecto.new(Repo, query: &query/2)
   end
 

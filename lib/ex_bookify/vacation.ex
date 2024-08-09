@@ -7,8 +7,10 @@ defmodule ExBookify.Vacation do
   import Ecto.Query, warn: false
   alias ExBookify.Repo
 
-  alias ExBookify.Vacation.{Booking, Place, Review}
   alias ExBookify.Accounts.User
+  alias ExBookify.Vacation.Booking
+  alias ExBookify.Vacation.Place
+  alias ExBookify.Vacation.Review
 
   @doc """
   Returns the place with the given `slug`.
@@ -50,7 +52,6 @@ defmodule ExBookify.Vacation do
       {:order, order}, query ->
         from(p in query, order_by: [{^order, :id}])
     end)
-    |> IO.inspect()
     |> Repo.all()
   end
 
@@ -142,7 +143,7 @@ defmodule ExBookify.Vacation do
 
   # Dataloader
 
-  def datasource() do
+  def datasource do
     Dataloader.Ecto.new(Repo, query: &query/2)
   end
 

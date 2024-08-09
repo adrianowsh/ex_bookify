@@ -1,10 +1,12 @@
 import_file("~/.iex.exs")
 
-alias ExBookify.Vacation.{Place, Booking, Review}
 alias ExBookify.Accounts.User
+alias ExBookify.Vacation.Booking
+alias ExBookify.Vacation.Place
+alias ExBookify.Vacation.Review
 
+alias ExBookify.Accounts
 alias ExBookify.Repo
 alias ExBookify.Vacation
-alias ExBookify.Accounts
 
 import Ecto.Query
