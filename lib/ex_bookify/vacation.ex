@@ -156,7 +156,7 @@ defmodule ExBookify.Vacation do
 
   def query(Booking, %{scope: :user}) do
     Booking
-    |> order_by(asc: :start_date)
+    |> order_by(asc: :id)
   end
 
   def query(queryable, _) do

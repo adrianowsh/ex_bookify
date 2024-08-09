@@ -1,6 +1,7 @@
 defmodule ExBookifyWeb.Schema.Schema do
   use Absinthe.Schema
 
+  alias ExBookify.Accounts
   alias ExBookify.Vacation
 
   import_types(Absinthe.Type.Custom)
@@ -22,6 +23,7 @@ defmodule ExBookifyWeb.Schema.Schema do
     loader =
       Dataloader.new()
       |> Dataloader.add_source(Vacation, Vacation.datasource())
+      |> Dataloader.add_source(Accounts, Accounts.datasource())
 
     Map.put(ctx, :loader, loader)
   end

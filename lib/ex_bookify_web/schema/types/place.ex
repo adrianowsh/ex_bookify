@@ -1,6 +1,6 @@
 defmodule ExBookifyWeb.Schema.Types.Place do
   use Absinthe.Schema.Notation
-  import Absinthe.Resolution.Helpers, only: [dataloader: 1]
+  import Absinthe.Resolution.Helpers, only: [dataloader: 1, dataloader: 3]
 
   alias ExBookify.Vacation
 
@@ -18,7 +18,12 @@ defmodule ExBookifyWeb.Schema.Types.Place do
     field(:price_per_night, non_null(:decimal))
     field(:image, non_null(:string))
     field(:image_thumbnail, non_null(:string))
-    field(:bookings, list_of(:booking), resolve: dataloader(Vacation))
+
+    field :bookings, list_of(:booking) do
+      arg(:limit, type: :integer, default_value: 100)
+      resolve(dataloader(Vacation, :bookings, args: %{scope: :place}))
+    end
+
     field(:reviews, list_of(:review), resolve: dataloader(Vacation))
   end
 
