@@ -1,5 +1,11 @@
 defmodule ExBookifyWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :ex_bookify
+  use Absinthe.Phoenix.Endpoint
+
+  socket("/socket", ExBookifyWeb.UserSocket,
+    websocket: true,
+    longpoll: false
+  )
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
@@ -14,6 +20,10 @@ defmodule ExBookifyWeb.Endpoint do
   socket "/live", Phoenix.LiveView.Socket,
     websocket: [connect_info: [session: @session_options]],
     longpoll: [connect_info: [session: @session_options]]
+
+  socket("/api/graphql-ws", ExBookifyWeb.GraphqlWsSocket,
+    websocket: [path: "", subprotocols: ["graphql-transport-ws"]]
+  )
 
   # Serve at "/" the static files from "priv/static" directory.
   #

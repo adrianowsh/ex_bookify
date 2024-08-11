@@ -11,13 +11,13 @@ defmodule ExBookifyWeb.Schema.Schema do
     import_fields(:root_query)
   end
 
-  # mutation do
-  #   # import_fields :root_mutation
-  # end
+  mutation do
+    import_fields(:root_mutation)
+  end
 
-  # subscription do
-  #   # import_fields :root_subscription
-  # end
+  subscription do
+    import_fields(:root_subscription)
+  end
 
   def context(ctx) do
     loader =

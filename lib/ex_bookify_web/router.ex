@@ -20,7 +20,9 @@ defmodule ExBookifyWeb.Router do
 
     forward "/api", Absinthe.Plug, schema: ExBookifyWeb.Schema.Schema
 
-    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: ExBookifyWeb.Schema.Schema
+    forward "/graphiql", Absinthe.Plug.GraphiQL,
+      schema: ExBookifyWeb.Schema.Schema,
+      socket: ExBookifyWeb.UserSocket
   end
 
   scope "/", ExBookifyWeb do

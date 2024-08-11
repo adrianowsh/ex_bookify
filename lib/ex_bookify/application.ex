@@ -17,7 +17,8 @@ defmodule ExBookify.Application do
       # Start a worker by calling: ExBookify.Worker.start_link(arg)
       # {ExBookify.Worker, arg},
       # Start to serve requests, typically the last entry
-      ExBookifyWeb.Endpoint
+      ExBookifyWeb.Endpoint,
+      {Absinthe.Subscription, ExBookifyWeb.Endpoint}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
