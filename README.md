@@ -5,7 +5,7 @@
 ![Lint](https://github.com/adrianowsh/ex_bookify/actions/workflows/lint.yml/badge.svg)
 ![Security](https://github.com/adrianowsh/ex_bookify/actions/workflows/security.yml/badge.svg)
 
-It's a Full-Stack GraphQL App with Elixir, Absinthe and Phoenix.
+It's a Backend GraphQL App with Elixir, Absinthe, and Phoenix.
 
 ## Data Model
 <img src="https://online.pragmaticstudio.com/assets/courses/unpacked-graphql/03-data-model.jpg" alt="Data Model">
